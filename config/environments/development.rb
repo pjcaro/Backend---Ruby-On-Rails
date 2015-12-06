@@ -34,6 +34,16 @@ Rails.application.configure do
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
 
+  config.after_initialize do
+    paypal_options = {
+      login: "pablotest_api1.gmail.com",
+      password: "6K2C7DP8NVMRP3HX",
+      signature: "A-x0PtEePNPVt3ozBV27x2nr3ZilA0vKs6Z8J5-oUQluBcE2nwKD9QQq"
+    }
+    ::EXPRESS_GATEWAY = ActiveMerchant::Billing::PaypalExpressGateway.new(paypal_options)
+
+  end
+
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end

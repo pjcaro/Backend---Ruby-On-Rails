@@ -15,9 +15,9 @@ Devise.setup do |config|
   # with default "from" parameter.
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
-  config.omniauth :facebook, "803427693116461", "fd1262021a20310a8f6ec6779510965c"
+  config.omniauth :facebook, "803427693116461", "fd1262021a20310a8f6ec6779510965c", info_fields: 'email, first_name, last_name'
 
-  config.omniauth :twitter, "QFjbLT8zbOvsOxMHpxfmdcE1L", "1fApiMW3hhQbpqa6hOqXWYJeFCeQuRuHKUsY2omzM35kHfohPY"
+  #config.omniauth :twitter, "QFjbLT8zbOvsOxMHpxfmdcE1L", "1fApiMW3hhQbpqa6hOqXWYJeFCeQuRuHKUsY2omzM35kHfohPY"
 
 
   OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE if Rails.env.development?
@@ -39,7 +39,7 @@ Devise.setup do |config|
   # session. If you need permissions, you should implement that in a before filter.
   # You can also supply a hash where the value is a boolean determining whether
   # or not authentication should be aborted when the value is not present.
-   config.authentication_keys = [:username]
+   config.authentication_keys = [:email]
 
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the
@@ -51,12 +51,12 @@ Devise.setup do |config|
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
   # to authenticate or find a user. Default is :email.
-  config.case_insensitive_keys = [:username]
+  config.case_insensitive_keys = [:email]
 
   # Configure which authentication keys should have whitespace stripped.
   # These keys will have whitespace before and after removed upon creating or
   # modifying a user and when used to authenticate or find a user. Default is :email.
-  config.strip_whitespace_keys = [:username]
+  config.strip_whitespace_keys = [:email]
 
   # Tell if authentication through request.params is enabled. True by default.
   # It can be set to an array that will enable params authentication only for the

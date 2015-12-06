@@ -1,4 +1,3 @@
-
 <%= form_for(@post) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
@@ -19,6 +18,10 @@
   <div class="form-group">
     <%= f.label :archivo %>
     <%= f.file_field :archivo, class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :costo %>
+    <%= f.number_field :costo, class:"form-control", step: "any" %>
   </div>
   <div class="form-group">
     <%= f.label :contenido %><br>

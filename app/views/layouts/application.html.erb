@@ -45,8 +45,10 @@
 
 <p class="notice" style="<%= "display:none;" if notice.nil? %>"><%= notice %></p>
 <p class="alert" style="<%= "display:none;" if alert.nil? %>"><%= alert %></p>
-
-<%= yield %>
-
+<div class="row">
+	<div class="col-md-6 center-block no-float">
+		<%= yield %>
+	</div>
+</div>
 </body>
 </html>
