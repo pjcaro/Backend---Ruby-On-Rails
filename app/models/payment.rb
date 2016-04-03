@@ -10,6 +10,5 @@ class Payment < ActiveRecord::Base
   private
   def valores_default
   	self.estado ||=1
-  	
   end
 end

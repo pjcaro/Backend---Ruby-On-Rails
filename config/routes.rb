@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   resources :attachments
 
   get "/carrito", to: "payments#carrito"
+  get "payments/express"
   resources :posts
-
   resources :payments
 
   devise_for :usuarios, controllers: {omniauth_callbacks: "omniauth_callbacks", registrations: "registrations"}

@@ -36,10 +36,11 @@ Rails.application.configure do
 
   config.after_initialize do
     paypal_options = {
-      login: "pablotest_api1.gmail.com",
-      password: "6K2C7DP8NVMRP3HX",
-      signature: "A-x0PtEePNPVt3ozBV27x2nr3ZilA0vKs6Z8J5-oUQluBcE2nwKD9QQq"
+      login: "pabloandkike-facilitator_api1.gmail.com",
+      password: "NDCXTJFEMNUDX86W",
+      signature: "AFcWxV21C7fd0v3bYYYRCpSSRl31ACrvGQjiXTK5n1pKbdOQJ-i6FbKt"
     }
+    ActiveMerchant::Billing::Base.mode = :test
     ::EXPRESS_GATEWAY = ActiveMerchant::Billing::PaypalExpressGateway.new(paypal_options)
 
   end

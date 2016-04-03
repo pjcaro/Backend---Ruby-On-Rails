@@ -14,4 +14,19 @@
 		</li>
 
 	<% end %>
+	<li class="list-group-item">
+		<div class="row">
+			<div class="col-md-8" >Total : </div>
+				<div class="col-md-3 text-right">					
+					 <%= current_usuario.costo_compra_pendiente %> USD
+				</div>
+		</div>
+	</li>
 </ul>
+
+<div class="text-center" data-no-turbolinks>
+	<%= link_to(payments_express_path, class: "btn btn-success btn-lg") do %>
+	<i class="fa fa-money"></i> Pagar
+
+	<% end %>
+</div>

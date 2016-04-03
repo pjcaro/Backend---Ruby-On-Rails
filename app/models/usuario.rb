@@ -28,6 +28,11 @@ class Usuario < ActiveRecord::Base
   #  false
   #end
 
+  def costo_compra_pendiente
+    payments.where(estado:1).joins("INNER JOIN posts on posts.id == payments.post_id").sum("costo")
+    
+  end
+
 
 
   #validates  :username, presence: true, uniqueness: true, 
